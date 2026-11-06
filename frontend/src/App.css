@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +17,13 @@ body {
   color: #f1f5f9;
 }
 
-button, textarea {
+button,
+textarea {
   font-family: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 .app {
@@ -23,6 +32,10 @@ button, textarea {
     radial-gradient(ellipse at 50% 0%, #18264b 0%, transparent 48%),
     #0b1020;
 }
+
+/* =========================
+   NAVIGATION BAR
+========================= */
 
 .navbar {
   height: 76px;
@@ -72,11 +85,20 @@ button, textarea {
   border-radius: 50%;
 }
 
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .main-container {
   max-width: 1000px;
+  width: 100%;
   margin: auto;
   padding: 65px 24px 25px;
 }
+
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero {
   text-align: center;
@@ -111,6 +133,7 @@ button, textarea {
 .hero h1 span {
   background: linear-gradient(90deg, #7c9cff, #bd91ff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -121,6 +144,10 @@ button, textarea {
   font-size: 15px;
   line-height: 1.8;
 }
+
+/* =========================
+   ANALYSIS CARD
+========================= */
 
 .analysis-card {
   background: #141d31;
@@ -158,6 +185,10 @@ button, textarea {
   font-size: 25px;
 }
 
+/* =========================
+   ARTICLE INPUT
+========================= */
+
 .analysis-card label {
   display: block;
   color: #a8b5cd;
@@ -168,6 +199,7 @@ button, textarea {
 }
 
 .analysis-card textarea {
+  display: block;
   width: 100%;
   min-height: 190px;
   resize: vertical;
@@ -203,9 +235,19 @@ button, textarea {
   border: none;
   color: #a5b4fc;
   cursor: pointer;
+  font-size: 12px;
 }
 
+.clear-btn:hover {
+  color: white;
+}
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+
 .analyze-btn {
+  display: block;
   width: 100%;
   padding: 16px;
   border: none;
@@ -227,6 +269,10 @@ button, textarea {
   cursor: wait;
 }
 
+/* =========================
+   ERROR MESSAGE
+========================= */
+
 .error-message {
   margin-top: 18px;
   padding: 13px;
@@ -236,6 +282,10 @@ button, textarea {
   color: #ffb4c4;
   font-size: 13px;
 }
+
+/* =========================
+   ANALYSIS RESULT
+========================= */
 
 .result-section {
   margin-top: 32px;
@@ -356,6 +406,157 @@ button, textarea {
   line-height: 1.7;
 }
 
+/* =========================
+   ANALYSIS HISTORY
+========================= */
+
+.history-section {
+  margin-top: 30px;
+  padding: 27px;
+  background: #141d31;
+  border: 1px solid #293650;
+  border-radius: 17px;
+}
+
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.history-heading h2 {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.history-heading p {
+  color: #93a1b8;
+  font-size: 13px;
+}
+
+.clear-history-btn {
+  padding: 9px 13px;
+  border: 1px solid #713b50;
+  background: #351e2a;
+  color: #ff9caf;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.clear-history-btn:hover {
+  background: #502536;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 35px 10px;
+  border: 1px dashed #35435f;
+  border-radius: 11px;
+}
+
+.empty-history span {
+  font-size: 30px;
+  color: #9aabff;
+}
+
+.empty-history h3 {
+  margin: 12px 0 7px;
+  font-size: 15px;
+}
+
+.empty-history p {
+  color: #8e9db5;
+  font-size: 12px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  background: #0e1729;
+  border: 1px solid #2b3852;
+  border-radius: 10px;
+  transition: border 0.2s;
+}
+
+.history-item:hover {
+  border-color: #647ce0;
+}
+
+.history-content {
+  min-width: 0;
+}
+
+.history-article {
+  font-size: 13px;
+  color: #dce4f3;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.history-content small {
+  color: #8291aa;
+  font-size: 11px;
+}
+
+.history-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.history-result strong {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.history-badge {
+  padding: 6px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.real-badge {
+  background: #103c35;
+  color: #4adeb1;
+}
+
+.fake-badge {
+  background: #452331;
+  color: #ff91a9;
+}
+
+.view-btn {
+  background: #293b64;
+  color: #b9c8ff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: #40558c;
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -388,6 +589,10 @@ button, textarea {
   line-height: 1.6;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -400,9 +605,21 @@ footer {
   font-size: 11px;
 }
 
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
 @media (max-width: 650px) {
   .navbar {
     padding: 0 20px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .nav-status {
+    font-size: 11px;
   }
 
   .main-container {
@@ -419,5 +636,41 @@ footer {
 
   .hero h1 {
     letter-spacing: -1px;
+  }
+
+  .history-section {
+    padding: 18px;
+  }
+
+  .history-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .history-result {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .history-heading {
+    align-items: flex-start;
+  }
+
+  .prediction {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-status {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .confidence strong {
+    font-size: 19px;
   }
 }
