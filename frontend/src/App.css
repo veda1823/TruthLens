@@ -1,10 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
-/* =========================
-   GLOBAL STYLES
-========================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,13 +13,8 @@ body {
   color: #f1f5f9;
 }
 
-button,
-textarea {
+button, textarea {
   font-family: inherit;
-}
-
-button {
-  cursor: pointer;
 }
 
 .app {
@@ -32,10 +23,6 @@ button {
     radial-gradient(ellipse at 50% 0%, #18264b 0%, transparent 48%),
     #0b1020;
 }
-
-/* =========================
-   NAVIGATION BAR
-========================= */
 
 .navbar {
   height: 76px;
@@ -85,20 +72,11 @@ button {
   border-radius: 50%;
 }
 
-/* =========================
-   MAIN CONTAINER
-========================= */
-
 .main-container {
   max-width: 1000px;
-  width: 100%;
   margin: auto;
   padding: 65px 24px 25px;
 }
-
-/* =========================
-   HERO SECTION
-========================= */
 
 .hero {
   text-align: center;
@@ -133,7 +111,6 @@ button {
 .hero h1 span {
   background: linear-gradient(90deg, #7c9cff, #bd91ff);
   -webkit-background-clip: text;
-  background-clip: text;
   color: transparent;
 }
 
@@ -144,10 +121,6 @@ button {
   font-size: 15px;
   line-height: 1.8;
 }
-
-/* =========================
-   ANALYSIS CARD
-========================= */
 
 .analysis-card {
   background: #141d31;
@@ -185,10 +158,6 @@ button {
   font-size: 25px;
 }
 
-/* =========================
-   ARTICLE INPUT
-========================= */
-
 .analysis-card label {
   display: block;
   color: #a8b5cd;
@@ -199,7 +168,6 @@ button {
 }
 
 .analysis-card textarea {
-  display: block;
   width: 100%;
   min-height: 190px;
   resize: vertical;
@@ -235,19 +203,9 @@ button {
   border: none;
   color: #a5b4fc;
   cursor: pointer;
-  font-size: 12px;
 }
-
-.clear-btn:hover {
-  color: white;
-}
-
-/* =========================
-   ANALYZE BUTTON
-========================= */
 
 .analyze-btn {
-  display: block;
   width: 100%;
   padding: 16px;
   border: none;
@@ -269,10 +227,6 @@ button {
   cursor: wait;
 }
 
-/* =========================
-   ERROR MESSAGE
-========================= */
-
 .error-message {
   margin-top: 18px;
   padding: 13px;
@@ -282,10 +236,6 @@ button {
   color: #ffb4c4;
   font-size: 13px;
 }
-
-/* =========================
-   ANALYSIS RESULT
-========================= */
 
 .result-section {
   margin-top: 32px;
@@ -406,157 +356,6 @@ button {
   line-height: 1.7;
 }
 
-/* =========================
-   ANALYSIS HISTORY
-========================= */
-
-.history-section {
-  margin-top: 30px;
-  padding: 27px;
-  background: #141d31;
-  border: 1px solid #293650;
-  border-radius: 17px;
-}
-
-.history-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 22px;
-}
-
-.history-heading h2 {
-  font-size: 20px;
-  margin-bottom: 7px;
-}
-
-.history-heading p {
-  color: #93a1b8;
-  font-size: 13px;
-}
-
-.clear-history-btn {
-  padding: 9px 13px;
-  border: 1px solid #713b50;
-  background: #351e2a;
-  color: #ff9caf;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.clear-history-btn:hover {
-  background: #502536;
-}
-
-.empty-history {
-  text-align: center;
-  padding: 35px 10px;
-  border: 1px dashed #35435f;
-  border-radius: 11px;
-}
-
-.empty-history span {
-  font-size: 30px;
-  color: #9aabff;
-}
-
-.empty-history h3 {
-  margin: 12px 0 7px;
-  font-size: 15px;
-}
-
-.empty-history p {
-  color: #8e9db5;
-  font-size: 12px;
-}
-
-.history-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.history-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding: 16px;
-  background: #0e1729;
-  border: 1px solid #2b3852;
-  border-radius: 10px;
-  transition: border 0.2s;
-}
-
-.history-item:hover {
-  border-color: #647ce0;
-}
-
-.history-content {
-  min-width: 0;
-}
-
-.history-article {
-  font-size: 13px;
-  color: #dce4f3;
-  line-height: 1.6;
-  margin-bottom: 8px;
-  overflow-wrap: anywhere;
-}
-
-.history-content small {
-  color: #8291aa;
-  font-size: 11px;
-}
-
-.history-result {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.history-result strong {
-  font-size: 13px;
-  color: #cbd5e1;
-}
-
-.history-badge {
-  padding: 6px 9px;
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.real-badge {
-  background: #103c35;
-  color: #4adeb1;
-}
-
-.fake-badge {
-  background: #452331;
-  color: #ff91a9;
-}
-
-.view-btn {
-  background: #293b64;
-  color: #b9c8ff;
-  border: none;
-  border-radius: 6px;
-  padding: 7px 11px;
-  cursor: pointer;
-}
-
-.view-btn:hover {
-  background: #40558c;
-}
-
-/* =========================
-   FEATURE CARDS
-========================= */
-
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -589,10 +388,6 @@ button {
   line-height: 1.6;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer {
   display: flex;
   justify-content: space-between;
@@ -605,21 +400,9 @@ footer {
   font-size: 11px;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
 @media (max-width: 650px) {
   .navbar {
     padding: 0 20px;
-  }
-
-  .brand {
-    font-size: 20px;
-  }
-
-  .nav-status {
-    font-size: 11px;
   }
 
   .main-container {
@@ -637,40 +420,283 @@ footer {
   .hero h1 {
     letter-spacing: -1px;
   }
+}
+
+/* =========================================
+   EXPLAINABLE AI - TRUTHLENS
+========================================= */
+
+.explanation-section {
+  margin-top: 28px;
+  padding: 24px;
+  background: #101a2e;
+  border: 1px solid #344363;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.explanation-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 22px;
+}
+
+.explanation-heading > span {
+  color: #a78bfa;
+  font-size: 25px;
+}
+
+.explanation-heading h3 {
+  color: #f1f5ff;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.explanation-heading p {
+  color: #93a1b8;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.explanation-group {
+  margin-top: 16px;
+  padding: 17px;
+  background: #141f35;
+  border: 1px solid #293956;
+  border-radius: 11px;
+}
+
+.explanation-group h4 {
+  color: #dce5f7;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.explanation-terms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.explanation-term {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #202d46;
+  border: 1px solid #34445f;
+  border-radius: 8px;
+  color: #e5eaf5;
+  font-size: 13px;
+  min-width: 0;
+}
+
+.explanation-term span {
+  overflow-wrap: anywhere;
+}
+
+.explanation-term strong {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.supporting-score {
+  color: #4adeb1;
+}
+
+.opposing-score {
+  color: #ff849d;
+}
+
+.no-terms {
+  color: #93a1b8;
+  font-size: 13px;
+}
+
+.explanation-note {
+  margin-top: 16px;
+  padding: 13px;
+  background: #202a3e;
+  border-left: 3px solid #8b7cf6;
+  border-radius: 7px;
+  color: #aebbd0;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   ANALYSIS HISTORY
+========================================= */
+
+.history-section {
+  margin-top: 28px;
+  padding: 26px;
+  background: #141d31;
+  border: 1px solid #2b3852;
+  border-radius: 17px;
+}
+
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.history-heading h2 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.history-heading p {
+  color: #93a1b8;
+  font-size: 13px;
+}
+
+.clear-history-btn {
+  padding: 9px 14px;
+  background: #351e2a;
+  border: 1px solid #794052;
+  border-radius: 8px;
+  color: #ff9aad;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 35px 15px;
+  background: #0e1729;
+  border: 1px dashed #35435f;
+  border-radius: 11px;
+}
+
+.empty-history span {
+  color: #a5b4fc;
+  font-size: 30px;
+}
+
+.empty-history h3 {
+  margin: 12px 0 7px;
+  font-size: 15px;
+}
+
+.empty-history p {
+  color: #8999b2;
+  font-size: 13px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 17px;
+  background: #0e1729;
+  border: 1px solid #2b3954;
+  border-radius: 11px;
+}
+
+.history-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-article {
+  color: #e0e7f4;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  margin-bottom: 8px;
+}
+
+.history-content small {
+  color: #8292aa;
+  font-size: 11px;
+}
+
+.history-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.history-result strong {
+  color: #dce5f7;
+  font-size: 13px;
+}
+
+.history-badge {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.fake-badge {
+  color: #ff91a7;
+  background: #351e2a;
+}
+
+.real-badge {
+  color: #4adeb1;
+  background: #102f2d;
+}
+
+.view-btn {
+  padding: 8px 13px;
+  background: #27375b;
+  border: 1px solid #455a8b;
+  border-radius: 7px;
+  color: #c4d0ff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.view-btn:hover {
+  background: #354979;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 650px) {
+  .explanation-section {
+    padding: 17px;
+  }
+
+  .explanation-terms {
+    grid-template-columns: 1fr;
+  }
 
   .history-section {
     padding: 18px;
   }
 
   .history-item {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .history-result {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .history-heading {
     align-items: flex-start;
-  }
-
-  .prediction {
-    gap: 12px;
-  }
-}
-
-@media (max-width: 400px) {
-  .nav-status {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .confidence strong {
-    font-size: 19px;
   }
 }

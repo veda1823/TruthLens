@@ -51,6 +51,9 @@ function App() {
         article: article.trim(),
         prediction: data.prediction,
         confidence: Number(data.confidence),
+        probabilities: data.probabilities,
+        explanation: data.explanation,
+        message: data.message,
         date: new Date().toLocaleString(),
       };
 
@@ -82,10 +85,33 @@ function App() {
     setResult({
       prediction: item.prediction,
       confidence: item.confidence,
-      probabilities: { REAL: 0, FAKE: 0 },
-      message: "Previous analysis. Probability breakdown was not saved.",
+      probabilities: item.probabilities || { REAL: 0, FAKE: 0 },
+      explanation: item.explanation || null,
+      message:
+        item.message ||
+        "Previous analysis. Some details may not have been saved.",
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const renderTerms = (terms, type) => {
+    if (!terms || terms.length === 0) {
+      return <p className="no-terms">No significant terms found.</p>;
+    }
+
+    return (
+      <div className="explanation-terms">
+        {terms.map((item, index) => (
+          <div className="explanation-term" key={`${item.word}-${index}`}>
+            <span>{item.word}</span>
+            <strong className={type}>
+              {item.contribution > 0 ? "+" : ""}
+              {Number(item.contribution).toFixed(5)}
+            </strong>
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -93,7 +119,9 @@ function App() {
       <nav className="navbar">
         <div className="brand">
           <div className="brand-icon">T</div>
-          <span>Truth<span className="brand-highlight">Lens</span></span>
+          <span>
+            Truth<span className="brand-highlight">Lens</span>
+          </span>
         </div>
         <div className="nav-status">
           <span className="status-dot"></span>
@@ -197,6 +225,41 @@ function App() {
                 </div>
               ))}
 
+              {/* Explainable AI section */}
+              {result.explanation && (
+                <div className="explanation-section">
+                  <div className="explanation-heading">
+                    <span>✦</span>
+                    <div>
+                      <h3>Why this prediction?</h3>
+                      <p>
+                        Important words and phrases that influenced the model.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="explanation-group supporting-group">
+                    <h4>Words supporting {result.prediction}</h4>
+                    {renderTerms(
+                      result.explanation.supporting_terms,
+                      "supporting-score"
+                    )}
+                  </div>
+
+                  <div className="explanation-group opposing-group">
+                    <h4>Words opposing {result.prediction}</h4>
+                    {renderTerms(
+                      result.explanation.opposing_terms,
+                      "opposing-score"
+                    )}
+                  </div>
+
+                  <p className="explanation-note">
+                    {result.explanation.note}
+                  </p>
+                </div>
+              )}
+
               <p className="disclaimer">
                 {result.message ||
                   "This prediction is based on learned text patterns, not independent fact verification."}
@@ -246,7 +309,7 @@ function App() {
                     >
                       {item.prediction?.toUpperCase()}
                     </span>
-                    <strong>{item.confidence.toFixed(2)}%</strong>
+                    <strong>{Number(item.confidence).toFixed(2)}%</strong>
                     <button
                       className="view-btn"
                       onClick={() => viewHistoryItem(item)}
@@ -276,10 +339,10 @@ function App() {
             </div>
           </div>
           <div className="feature">
-            <span className="feature-icon">◷</span>
+            <span className="feature-icon">✦</span>
             <div>
-              <h3>Quick Results</h3>
-              <p>Returns a prediction and model confidence scores.</p>
+              <h3>Explainable AI</h3>
+              <p>Highlights words influencing the model prediction.</p>
             </div>
           </div>
         </section>
